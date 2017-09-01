@@ -1,0 +1,117 @@
+<ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
+	<form class="form-horizontal">
+		<div class="container-fluid">
+			<!-- Tab panel edit project  -->
+			<div class="form-group row">
+				<h4>Buscar proyecto para editar: </h4>
+			</div>
+			<!-- Form group short name in edit project (find) -->
+			<div class="form-group row">
+				<div class="form-group col-md-3">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="shortnameeprjfind" class="control-label col-md-12">Nombre Corto:</label>
+					<div class="col-md-12">
+							<div class="input-group input-group-sm">
+									<input type="text" class="form-control with-primary-addon" placeholder="Nombre corto" aria-describedby="basic-addon1">
+									<span class="input-group-addon input-group-addon-primary addon-rigth" id="basic-addon1"><button class="btn btn-primary">Go!</button></span>
+									
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-shadow-border"></div>
+			<br>
+			<div class="form-group row">
+				<h4>Ingrese los nuevos datos: </h4>
+			</div>
+			<!-- Form group Id in edit project from edit project (find) -->
+			<div class="form-group row">
+				<div class="form-group col-md-6">
+					<label for="idprojecteprj" class="control-label col-md-12">ID:</label>
+					<div class="col-md-12">
+						<input class="form-control" id="idprojecteprj" type="text" placeholder="01" readonly/>
+					</div>
+				</div>
+				<!-- Form group short name in edit project -->
+				<div class="form-group col-md-6">
+					<label for="shortnameeprj" class="control-label col-md-12">Nombre Corto:</label>
+					<div class="col-md-12">
+						<input class="form-control" id="shortnameeprj" type="text" placeholder="PRJ01PRB">
+					</div>
+				</div>
+			</div>
+			<!-- Form group name in edit project -->
+			<div class="form-group row">
+				<div class="form-group col-md-6">
+					<label for="nameeprj" class="control-label col-md-12">Nombre:</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" id="nameeprj" placeholder="Proyecto Prueba 1">
+					</div>
+				</div>
+				<!-- Form group description in edit project -->
+				<div class="form-group col-md-6">
+					<label for="descriptioneprj" class="control-label col-md-12">Descripción:</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" id="descriptioneprj" placeholder="Proyecto para hacer pruebas">
+					</div>
+				</div>
+			</div>
+			<!-- Form group creation date in edit project -->
+			<div class="form-group row">
+				<div class="form-group col-md-6">
+						<label for="labeleprj" class="control-label  col-md-12">Etiqueta:</label>
+						<div class="col-md-12">
+								<div class="form-group">
+										
+											<select multiple class="form-control" id="exampleSelect2">
+											  <option>1</option>
+											  <option>2</option>
+											  <option>3</option>
+											 
+											</select>
+										  </div>
+						</div>
+				
+				</div>
+				<!-- Form group author in edit project -->
+				<div class="form-group col-md-6">
+					<label for="authoreprj" class="control-label col-md-12">Autor:</label>
+					<div class="col-md-12">
+							<div class="form-group">
+									
+										<select multiple class="form-control" id="exampleSelect2">
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										 
+										</select>
+									  </div>
+					</div>
+				</div>
+				<!-- Form group label in edit project -->
+				<div class="form-group col-md-6">
+						<label for="creationdateepj" class="control-label col-md-12">Fecha de Creación:</label>
+						<div class="col-md-12">
+							<div class="input-group date">
+								<input type="text" class="form-control" placeholder="2017-07-15" readonly/>
+								<span class="input-group-addon btn-primary" id="calendareditprj"><span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+				</div>
+			</div>
+			<!-- Form group  bottons document, save, close in edit project-->
+			<div class="form-group row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-5">
+					
+					<modalsprojects></modalsprojects>
+				</div>
+			</div>
+		</div>
+	</form>
+</ba-card>

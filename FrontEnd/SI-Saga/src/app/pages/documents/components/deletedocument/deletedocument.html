@@ -1,0 +1,87 @@
+<ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
+	<form class="form-horizontal">
+		<div class="container-fluid">
+			<div class="form-group row">
+				<h4>Buscar documentos a eliminar </h4>
+			</div>
+			<div class="form-group row">
+				<!-- Form group ID in trash documents (find) -->
+				<div class="form-group col-md-6">
+					<label for="idprojecttdocfind" class="control-label col-md-12">ID:</label>
+					<div class="col-md-12">
+							<div class="input-group input-group-sm">
+									<input type="text" class="form-control with-primary-addon" placeholder="ID" aria-describedby="basic-addon1">
+									<span class="input-group-addon input-group-addon-primary addon-rigth" id="basic-addon1"><button class="btn btn-primary">Go!</button></span>
+									
+							</div>
+					</div>
+				</div>
+				<!-- Form group short name in trash documents -->
+				<div class="form-group col-md-6">
+					<label for="shortnametdoc" class="control-label col-md-12">Nombre Corto:</label>
+					<div class="col-md-12">
+							<div class="input-group input-group-sm">
+									<input type="text" class="form-control with-primary-addon" placeholder="Nombre corto" aria-describedby="basic-addon1">
+									<span class="input-group-addon input-group-addon-primary addon-rigth" id="basic-addon1"><button class="btn btn-primary">Go!</button></span>
+									
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<!-- Form group from  in trash documents -->
+				<div class="form-group col-md-6">
+					<label for="fromdatetdoc" class="control-label col-md-12">Desde:</label>
+					<div class="col-md-12">
+						<div class="input-group">
+							<input class="form-control" id="fromdatetdoc" type="text" placeholder="Desde" readonly/>
+							<div class="input-group-addon btn btn-primary" id="calendartrashdocument1"><span class="glyphicon glyphicon-calendar"></span></div>
+						</div>
+					</div>
+				</div>
+				<!-- Form group date in trash documents -->
+				<div class="form-group col-md-6">
+					<label for="datetdoc" class="control-label col-md-12">Hasta:</label>
+					<div class="col-md-12 ">
+						<div class="input-group">
+							<input class="form-control" id="datetdoc" type="text" placeholder="Hasta" readonly/>
+							<div class="input-group-addon btn btn-primary" id="calendartrashdocument2"><span class="glyphicon glyphicon-calendar"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Table respopnsive in trash documents -->
+
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr class="success">
+						<th>ID</th>
+						<th>Nombre Corto</th>
+						<th>Nombre</th>
+						<th>Descripción</th>
+						<th>Fecha Creación</th>
+						<th>Proyecto</th>
+						<th>Documento</th>
+						
+						<th>Eliminar</th>
+					</tr>
+					<tr>
+						<td>.</td>
+						<td>.</td>
+						<td>.</td>
+						<td>.</td>
+						<td>.</td>
+						<td>.</td>
+						<td>.</td>
+						<td>
+							.
+						</td>
+						
+					</tr>
+				
+				
+				</table>
+			</div>
+		</div>
+	</form>
+</ba-card>
