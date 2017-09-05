@@ -64,12 +64,12 @@
 						<div class="col-md-12">
 								<div class="form-group">
 										
-											<select multiple class="form-control" id="exampleSelect2">
-											  <option>1</option>
-											  <option>2</option>
-											  <option>3</option>
-											 
-											</select>
+									<select  multiple class="form-control" id="exampleSelect2">
+										
+									  <option *ngFor = "let labeldp of labelsTableData" [value] = "labeldp.name">{{labeldp.name}}</option>	
+	
+									 
+									</select>
 										  </div>
 						</div>
 				
@@ -80,12 +80,12 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-										<select multiple class="form-control" id="exampleSelect2">
-										  <option>1</option>
-										  <option>2</option>
-										  <option>3</option>
-										 
-										</select>
+								<select  multiple class="form-control" id="exampleSelect2">
+									
+								  <option *ngFor = "let authordp of viewAuthorsTableData" [value] = "authordp.name">{{authordp.name}}</option>	
+
+								 
+								</select>
 									  </div>
 					</div>
 				</div>

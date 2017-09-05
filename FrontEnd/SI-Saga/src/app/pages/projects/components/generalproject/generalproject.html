@@ -43,12 +43,12 @@
 				<div class="form-group col-md-6">
 					<label for="authornprj" class="control-label col-md-12">Autor:</label>
 					<div class="col-md-12">
-							<div class="form-group">
+							<div  class="form-group">
 								
-									<select multiple class="form-control" id="exampleSelect2">
-									  <option>1</option>
-									  <option>2</option>
-									  <option>3</option>
+									<select  multiple class="form-control" id="exampleSelect2">
+										
+									  <option *ngFor = "let authorgp of viewAuthorsTableData" [value] = "authorgp.name">{{authorgp.name}}</option>	
+
 									 
 									</select>
 								  </div>
@@ -60,12 +60,12 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-									<select multiple class="form-control" id="exampleSelect2">
-									  <option>1</option>
-									  <option>2</option>
-									  <option>3</option>
-									 
-									</select>
+								<select  multiple class="form-control" id="exampleSelect2">
+									
+								  <option *ngFor = "let typeprojectgp of typeProjectsTableData" [value] = "typeprojectgp.name">{{typeprojectgp.name}}</option>	
+
+								 
+								</select>
 								  </div>
 					</div>
 				</div>

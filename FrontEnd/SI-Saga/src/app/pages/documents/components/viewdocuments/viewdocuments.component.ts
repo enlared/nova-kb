@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {ViewDocumentsService} from '../../../../theme/services/viewDocumentsService/viewdocuments.service';
 
 @Component({
   selector: 'viewdocuments',
@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Viewdocuments {
 
- constructor() {
+ 
+  viewDocumentsTableData:Array<any>;
+  constructor(private _viewDocumentsService : ViewDocumentsService) {
+  this.viewDocumentsTableData = _viewDocumentsService.viewDocumentsTableData;
   }
   
 }

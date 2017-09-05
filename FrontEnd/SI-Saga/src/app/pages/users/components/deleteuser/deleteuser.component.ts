@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 
 
-
 @Component({
   selector: 'deleteuser',
   templateUrl: './deleteuser.html',
@@ -9,9 +8,8 @@ import {Component} from '@angular/core';
 })
 export class Deleteuser {
 
- 
-
   constructor() {
-  
   }
+
+
 }

@@ -8,12 +8,13 @@ import { routing }       from './users.routing';
 import { Users } from './users.component';
 import { Edituser } from './components/edituser/edituser.component';
 import { Newuser } from './components/newuser/newuser.component';
-import { Viewusers } from './components/viewusers/viewusers.component';
+import { ViewUsers } from './components/viewusers/viewusers.component';
 import { Deleteuser } from './components/deleteuser/deleteuser.component';
 import { ModalsUsers } from '../../theme/components/modals/users/modalsusers.component';
-
-
-
+import { ViewUsersService} from '../../theme/services/viewUsersService/viewusers.service';
+import { HttpModule } from '@angular/http';
+import { RoleService} from '../../theme/services/roleService/role.service';
+import { IdUsersService} from '../../theme/services/idUsersService/idusers.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,13 +22,14 @@ import { ModalsUsers } from '../../theme/components/modals/users/modalsusers.com
     NgaModule,
     NgbModalModule,
     NgbDropdownModule,
-    routing
+    routing,
+    HttpModule,
   ],
   declarations: [
     Users,
     Edituser,
     Newuser,
-    Viewusers,
+    ViewUsers,
     Deleteuser,
     ModalsUsers,
     DefaultModalsUsers
@@ -36,7 +38,9 @@ import { ModalsUsers } from '../../theme/components/modals/users/modalsusers.com
     DefaultModalsUsers
    ],
   providers: [
-
+  ViewUsersService,
+  RoleService,
+  IdUsersService,
   ]
 })
 export class UsersModule {}

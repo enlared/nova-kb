@@ -44,12 +44,12 @@
 						
 								<div class="form-group">
 										
-											<select class="form-control" id="exampleSelect2">
-											  <option>1</option>
-											  <option>2</option>
-											  <option>3</option>
-											 
-											</select>
+									<select  multiple class="form-control" id="exampleSelect2">
+										
+									  <option *ngFor = "let rolnu of roleTableData" [value] = "rolnu.name">{{rolnu.name}}</option>	
+	
+									 
+									</select>
 										  </div>
 						
 					</div>

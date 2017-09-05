@@ -1,1 +1,1 @@
-export * from './viewusers.component';
+export * from './viewUsers.component';

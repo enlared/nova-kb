@@ -39,6 +39,10 @@
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../node_modules/handsontable/dist/handsontable.full.js",
+		"../node_modules/datetime/dist/js/bootstrap-datetimepicker.es.js",
+		"../node_modules/datetime/dist/js/bootstrap-datetimepicker.min.js",
+		"../node_modules/datetime/dist/js/moment.min.js",
+		"../node_modules/calendar-modules/scripts/calendarscript.js",
         "../node_modules/chroma-js/chroma.js"
       ],
       "environmentSource": "environments/environment.ts",

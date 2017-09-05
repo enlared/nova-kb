@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import {RoleService} from '../../../../theme/services/roleService/role.service';
 
 @Component({
   selector: 'newuser',
@@ -8,8 +8,13 @@ import {Component} from '@angular/core';
 })
 export class Newuser {
 
-  constructor() {
-  }
 
+  roleTableData:Array<any>;
+
+  constructor(private _roleService : RoleService ) {
+
+    this.roleTableData = _roleService.roleTableData;
+ 
+}
 
 }

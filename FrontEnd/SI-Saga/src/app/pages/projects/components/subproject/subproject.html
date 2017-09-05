@@ -40,12 +40,12 @@
 						<div class="col-md-12">
 								<div class="form-group">
 										
-										<select multiple class="form-control" id="exampleSelect2">
-										  <option>1</option>
-										  <option>2</option>
-										  <option>3</option>
-										 
-										</select>
+									<select  multiple class="form-control" id="exampleSelect2">
+										
+									  <option *ngFor = "let labelsp of labelsTableData" [value] = "labelsp.name">{{labelsp.name}}</option>	
+	
+									 
+									</select>
 									  </div>
 						</div>
 				</div>
@@ -55,12 +55,12 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-									<select multiple class="form-control" id="exampleSelect2">
-									  <option>1</option>
-									  <option>2</option>
-									  <option>3</option>
-									 
-									</select>
+								<select  multiple class="form-control" id="exampleSelect2">
+									
+								  <option *ngFor = "let authorsp of viewAuthorsTableData" [value] = "authorsp.name">{{authorsp.name}}</option>	
+
+								 
+								</select>
 								  </div>
 					</div>
 				</div>

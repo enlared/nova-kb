@@ -6,7 +6,7 @@ import { Subproject } from './components/subproject/subproject.component';
 import { Viewprojects } from './components/viewprojects/viewprojects.component';
 import { Editproject } from './components/editproject/editproject.component';
 import { Generalproject } from './components/generalproject/generalproject.component';
-import { Deleteproject } from './components/deleteproject/deleteproject.component';
+
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'viewprojects', component: Viewprojects },
       { path: 'generalproject', component: Generalproject },
       { path: 'editproject', component: Editproject },
-      { path: 'deleteproject', component: Deleteproject },
+
     ]
   }
 ];

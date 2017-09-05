@@ -59,14 +59,7 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'deleteproject',
-            data: {
-              menu: {
-                title: 'Eliminar proyectos',
-              }
-            }
-          },
+    
          
         ]
       },
@@ -107,14 +100,7 @@ export const PAGES_MENU = [
               }
             }
           },
-           {
-             path: 'deletedocument',
-             data: {
-               menu: {
-                 title: 'Eliminar Documentos',
-               }
-             }
-           }
+   
         ]
       },
       {
@@ -153,14 +139,7 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'deleteuser',
-            data: {
-              menu: {
-                title: 'Eliminar Usuario',
-              }
-            }
-          }
+ 
         ]
       },
       {

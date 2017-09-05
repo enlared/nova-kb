@@ -13,9 +13,7 @@
 							<div class="form-group">
 									
 										<select  class="form-control" id="exampleSelect2">
-										  <option>1</option>
-										  <option>2</option>
-										  <option>3</option>
+											<option *ngFor = "let ideu of idUsersTableData" [value] = "ideu.name">{{ideu.name}}</option>
 										 
 										</select>
 									  </div>
@@ -28,9 +26,7 @@
 							<div class="form-group">
 									
 										<select class="form-control" id="exampleSelect2">
-										  <option>1</option>
-										  <option>2</option>
-										  <option>3</option>
+											<option *ngFor = "let usereu of viewUsersTableData" [value] = "usereu.name">{{usereu.name}}</option>
 										 
 										</select>
 									  </div>
@@ -89,10 +85,7 @@
 							<div class="form-group">
 									
 										<select  class="form-control" id="exampleSelect2">
-										  <option>1</option>
-										  <option>2</option>
-										  <option>3</option>
-										 
+											<option *ngFor = "let roleeu of roleTableData" [value] = "roleeu.name">{{roleeu.name}}</option>
 										</select>
 									  </div>
 					</div>
