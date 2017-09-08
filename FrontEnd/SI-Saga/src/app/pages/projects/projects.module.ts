@@ -11,13 +11,14 @@ import { Editproject } from './components/editproject/editproject.component';
 import { Generalproject } from './components/generalproject/generalproject.component';
 import { DefaultModalsProjects } from '../../theme/components/modals/projects/defaultmodalsprojects/defaultmodalsprojects.component';
 import { ModalsProjects } from '../../theme/components/modals/projects/modalsprojects.component';
+import { ModalsSubProjects } from '../../theme/components/modals/projects/modalssubprojects.component';
 import { ViewProjectsService} from '../../theme/services/viewProjectsService/viewprojects.service';
 import { ViewSubProjectsService} from '../../theme/services/viewSubProjectsService/viewsubprojects.service';
 import { HttpModule } from '@angular/http';
 import { ViewAuthorsService} from '../../theme/services/authorsService/viewauthors.service';
 import { TypeProjectsService} from '../../theme/services/typeProjectsService/typeprojects.service';
 import { LabelsService} from '../../theme/services/labelsService/labels.service';
-
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   imports: [
@@ -27,11 +28,13 @@ import { LabelsService} from '../../theme/services/labelsService/labels.service'
     NgbDropdownModule,
     NgbModalModule,
     HttpModule,
-    routing
+    routing,
+    MyDatePickerModule
   ],
   declarations: [
     Subproject,
     ModalsProjects,
+    ModalsSubProjects,
     Viewprojects,
     Editproject,
     Generalproject,

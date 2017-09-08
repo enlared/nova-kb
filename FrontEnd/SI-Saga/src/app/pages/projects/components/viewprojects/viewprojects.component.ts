@@ -4,6 +4,7 @@ import {ViewSubProjectsService} from '../../../../theme/services/viewSubProjects
 import {ViewAuthorsService} from '../../../../theme/services/authorsService/viewauthors.service';
 import {LabelsService} from '../../../../theme/services/labelsService/labels.service';
 import {TypeProjectsService} from '../../../../theme/services/typeProjectsService/typeprojects.service';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'viewprojects',
@@ -11,6 +12,11 @@ import {TypeProjectsService} from '../../../../theme/services/typeProjectsServic
   styleUrls: ['./viewprojects.scss']
 })
 export class Viewprojects {
+
+  private myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'mm-dd-yyyy',
+};
 
     viewProjectsTableData:Array<any>;
     viewSubProjectsTableData:Array<any>;
@@ -26,6 +32,7 @@ export class Viewprojects {
     this.labelsTableData = _labelsService.labelsTableData;
     this.typeProjectsTableData = _typeProjectsService.typeProjectsTableData;
     }
+
 
   }
 

@@ -3,8 +3,11 @@
 		<div class="container-fluid">
 			<!-- Table form view projects -->
 			<div class="form-group row">
-				<h4>Buscar proyectos para listar </h4>
+				<h4>Buscar proyectos o subproyectos para listar </h4>
 			</div>
+			<button class="btn btn-primary showProjects"ng-click="ng-show = project-form unhidden">Proyecto</button>
+			<button class="btn btn-success" ng-show="show_form"  ng-click="formToggle()">Subproyecto</button>
+			<div class = "project-form"  hidden>
 			<div class="form-group row">
 				<div class="form-group col-md-6">
 					<label for="shortnamevprj" class="control-label col-md-12">Nombre Corto:</label>
@@ -71,8 +74,8 @@
 					<label for="datefromvprj" class="control-label col-md-12">Desde:</label>
 					<div class="col-md-12">
 						<div class="input-group">
-							<input class="form-control" id="datefromvprj" type="text" placeholder="Desde" readonly/>
-							<div class="input-group-addon btn btn-primary" id="calendarviewproject1"><span class="glyphicon glyphicon-calendar"></span></div>
+							<my-date-picker name="mydate" [options]="myDatePickerOptions"
+							[(ngModel)]="model" required></my-date-picker>
 						</div>
 					</div>
 				</div>
@@ -81,8 +84,8 @@
 					<label for="datevprj" class="control-label col-md-12">Hasta:</label>
 					<div class="form-group col-md-12 ">
 						<div class="input-group">
-							<input class="form-control" id="datevprj" type="text" placeholder="Hasta" readonly/>
-							<div class="input-group-addon btn btn-primary" id="calendarviewproject2"><span class="glyphicon glyphicon-calendar"></span></div>
+							<my-date-picker name="mydate" [options]="myDatePickerOptions"
+							[(ngModel)]="model" required></my-date-picker>
 						</div>
 					</div>
 				</div>
@@ -172,6 +175,7 @@
 					</div>
 		</div>
 		</div>
+	</div> <!-- Div de wrapper -->
 	</div>
 	</form>
 </ba-card>

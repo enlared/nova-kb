@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {ViewAuthorsService} from '../../../../theme/services/authorsService/viewauthors.service';
 import {LabelsService} from '../../../../theme/services/labelsService/labels.service';
+import {IMyDpOptions} from 'mydatepicker';
+
 
 @Component({
   selector: 'subproject',
@@ -9,6 +11,11 @@ import {LabelsService} from '../../../../theme/services/labelsService/labels.ser
 })
 export class Subproject {
   
+  private myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'mm-dd-yyyy',
+};
+
   viewAuthorsTableData:Array<any>;
   labelsTableData:Array<any>;
 

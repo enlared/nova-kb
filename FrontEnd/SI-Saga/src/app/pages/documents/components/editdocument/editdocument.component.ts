@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'editdocument',
@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Editdocument {
 
-   
+  private myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'mm-dd-yyyy',
+};
+
     constructor() {
     
   }

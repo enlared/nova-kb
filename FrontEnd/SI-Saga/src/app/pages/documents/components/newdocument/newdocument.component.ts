@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'newdocument',
@@ -8,6 +9,10 @@ import {Component} from '@angular/core';
 })
 export class Newdocument {
 
+  private myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'mm-dd-yyyy',
+};
   constructor() {
   }
 }

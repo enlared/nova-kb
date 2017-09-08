@@ -34,8 +34,8 @@
 					<label for="fromdatevdoc" class="control-label col-md-12">Desde:</label>
 					<div class="col-md-12">
 						<div class="input-group">
-							<input class="form-control" id="fromdatevdoc" type="text" placeholder="Desde" readonly/>
-							<div class="input-group-addon btn btn-primary" id="calendarviewdoc1"><span class="glyphicon glyphicon-calendar"></span></div>
+							<my-date-picker name="mydate" [options]="myDatePickerOptions"
+							[(ngModel)]="model" required></my-date-picker>
 						</div>
 					</div>
 				</div>
@@ -44,8 +44,8 @@
 					<label for="datevdoc" class="control-label col-md-12">Hasta:</label>
 					<div class="col-md-12">
 						<div class="input-group">
-							<input class="form-control" id="datevdoc" type="text" placeholder="Hasta" readonly/>
-							<div class="input-group-addon btn btn-primary" id="calendarviewdoc2"><span class="glyphicon glyphicon-calendar"></span></div>
+							<my-date-picker name="mydate" [options]="myDatePickerOptions"
+							[(ngModel)]="model" required></my-date-picker>
 						</div>
 					</div>
 				</div>

@@ -12,6 +12,7 @@ import { Editdocument } from './components/editdocument/editdocument.component';
 import { DefaultModalsDocuments } from '../../theme/components/modals/documents/defaultmodalsdocuments/defaultmodalsdocuments.component';
 import { ViewDocumentsService} from '../../theme/services/viewDocumentsService/viewdocuments.service';
 import { HttpModule } from "@angular/http";
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { HttpModule } from "@angular/http";
     NgbDropdownModule,
     routing,
     HttpModule,
+    MyDatePickerModule
   ],
   declarations: [
     Documents,

@@ -71,9 +71,8 @@
 						<label for="creationdatenprj" class="control-label col-md-12">Fecha de Creación:</label>
 						<div class="col-md-12">
 							<div class="input-group date">
-								<input type="text" class="form-control" placeholder="2017-07-10" readonly/>
-								<span class="input-group-addon btn-primary" id="calendarnprj"><span class="glyphicon glyphicon-calendar"></span>
-								</span>
+								<my-date-picker name="mydate" [options]="myDatePickerOptions"
+								[(ngModel)]="model" required></my-date-picker>
 							</div>
 						</div>
 			
@@ -83,10 +82,10 @@
 			<div class="form-group row">
 				<div class="col-md-4">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 				</div>
-				<div class="col-md-5">
-					<modalsprojects></modalsprojects>
+				<div class="col-md-4">
+					<modalssubprojects></modalssubprojects>
 					
 				</div>
 			</div>

@@ -33,9 +33,8 @@
 					<label for="creationdatendoc" class="control-label col-md-12">Fecha de Creación:</label>
 					<div class="col-md-12">
 						<div class="input-group date">
-							<input type="text" class="form-control" placeholder="2017-07-10" readonly/>
-							<span class="input-group-addon btn-primary" id="calendarnewdoc"><span class="glyphicon glyphicon-calendar"></span>
-							</span>
+							<my-date-picker name="mydate" [options]="myDatePickerOptions"
+							[(ngModel)]="model" required></my-date-picker>
 						</div>
 					</div>
 				</div>
