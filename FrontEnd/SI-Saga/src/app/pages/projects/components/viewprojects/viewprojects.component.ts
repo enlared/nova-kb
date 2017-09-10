@@ -5,7 +5,11 @@ import {ViewAuthorsService} from '../../../../theme/services/authorsService/view
 import {LabelsService} from '../../../../theme/services/labelsService/labels.service';
 import {TypeProjectsService} from '../../../../theme/services/typeProjectsService/typeprojects.service';
 import {IMyDpOptions} from 'mydatepicker';
-
+import {Authors} from '../../../../theme/services/authorsService/authors';
+import {TypeProjects} from '../../../../theme/services/typeProjectsService/typeprojects';
+import {Labels} from '../../../../theme/services/labelsService/labels';
+import {Projects} from '../../../../theme/services/viewProjectsService/projects';
+import {SubProject} from '../../../../theme/services/viewSubProjectsService/subproject';
 @Component({
   selector: 'viewprojects',
   templateUrl: './viewprojects.html',
@@ -15,24 +19,52 @@ export class Viewprojects {
 
   private myDatePickerOptions: IMyDpOptions = {
     // other options...
-    dateFormat: 'mm-dd-yyyy',
+    dateFormat: 'dd-mm-yyyy',
 };
 
-    viewProjectsTableData:Array<any>;
-    viewSubProjectsTableData:Array<any>;
-    viewAuthorsTableData:Array<any>;
-    typeProjectsTableData:Array<any>;
-    labelsTableData:Array<any>;
+typeProjects: TypeProjects[];
+projects: Projects[];
+subProject: SubProject[];
+authors: Authors[];
+labels: Labels[];
+msgError: string;
+
+   
     
-
+   
     constructor(private _viewProjectsService : ViewProjectsService, private _viewSubProjectsService : ViewSubProjectsService, private _viewAuthorsService : ViewAuthorsService, private _labelsService : LabelsService, private _typeProjectsService : TypeProjectsService ) {
-    this.viewProjectsTableData = _viewProjectsService.viewProjectsTableData;
-    this.viewSubProjectsTableData = _viewSubProjectsService.viewSubProjectsTableData;
-    this.viewAuthorsTableData = _viewAuthorsService.viewAuthorsTableData;
-    this.labelsTableData = _labelsService.labelsTableData;
-    this.typeProjectsTableData = _typeProjectsService.typeProjectsTableData;
+      this.loadTypeProjects();
+      this.loadAuthors(); 
+      this.loadLabels();
+      this.loadProjects();
+      this.loadSubProjects();
     }
+    loadSubProjects(){
+      
+      
+      this._viewSubProjectsService.getSubProjects().subscribe(subProject =>this.subProject = subProject, error => this.msgError = <any>error);
+          } 
+    loadProjects(){
+      
+      
+      this._viewProjectsService.getProjects().subscribe(projects =>this.projects = projects, error => this.msgError = <any>error);
+          } 
+    loadTypeProjects(){
+      
+      
+      this._typeProjectsService.getTypeProjects().subscribe(typeProjects =>this.typeProjects = typeProjects, error => this.msgError = <any>error);
+          }
+          loadAuthors(){
+            
+            
+            this._viewAuthorsService.getAuthors().subscribe(authors =>this.authors = authors, error => this.msgError = <any>error);
+                }
 
+                loadLabels(){
+                  
+                  
+                  this._labelsService.getLabels().subscribe(labels =>this.labels = labels, error => this.msgError = <any>error);
+                      }
 
   }
 

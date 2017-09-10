@@ -40,9 +40,9 @@
 						<div class="col-md-12">
 								<div class="form-group">
 										
-									<select  multiple class="form-control" id="exampleSelect2">
+									<select  multiple class="form-control text-center" id="exampleSelect2">
 										
-									  <option *ngFor = "let labelsp of labelsTableData" [value] = "labelsp.name">{{labelsp.name}}</option>	
+									  <option *ngFor = "let label of labels" [value] = "label.name">{{label.name}}</option>	
 	
 									 
 									</select>
@@ -55,9 +55,9 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="exampleSelect2">
 									
-								  <option *ngFor = "let authorsp of viewAuthorsTableData" [value] = "authorsp.name">{{authorsp.name}}</option>	
+								  <option *ngFor = "let author of authors" [value] = "author.name">{{author.name}}</option>	
 
 								 
 								</select>

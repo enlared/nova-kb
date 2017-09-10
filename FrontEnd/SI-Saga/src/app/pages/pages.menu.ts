@@ -143,7 +143,7 @@ export const PAGES_MENU = [
         ]
       },
       {
-        path: '',
+        path: 'configurationsaga',
         data: {
           menu: {
             title: 'Configuración',
@@ -154,7 +154,14 @@ export const PAGES_MENU = [
           }
         },
         children: [
-        
+          {
+            path: 'configurationsisaga',
+            data: {
+              menu: {
+                title: 'Configurar SAGA',
+              }
+            }
+          },
         
         ]
       },

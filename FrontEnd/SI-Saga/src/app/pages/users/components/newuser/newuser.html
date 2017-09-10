@@ -44,9 +44,9 @@
 						
 								<div class="form-group">
 										
-									<select  multiple class="form-control" id="exampleSelect2">
+									<select  multiple class="form-control text-center" id="exampleSelect2">
 										
-									  <option *ngFor = "let rolnu of roleTableData" [value] = "rolnu.name">{{rolnu.name}}</option>	
+									  <option *ngFor = "let rol of roles" [value] = "rol.namerole" >{{rol.namerole}}</option>	
 	
 									 
 									</select>

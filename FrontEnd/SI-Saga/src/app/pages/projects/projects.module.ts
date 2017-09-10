@@ -20,6 +20,7 @@ import { TypeProjectsService} from '../../theme/services/typeProjectsService/typ
 import { LabelsService} from '../../theme/services/labelsService/labels.service';
 import { MyDatePickerModule } from 'mydatepicker';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -29,7 +30,8 @@ import { MyDatePickerModule } from 'mydatepicker';
     NgbModalModule,
     HttpModule,
     routing,
-    MyDatePickerModule
+    MyDatePickerModule,
+    
   ],
   declarations: [
     Subproject,
@@ -39,8 +41,8 @@ import { MyDatePickerModule } from 'mydatepicker';
     Editproject,
     Generalproject,
     Projects,
-    DefaultModalsProjects
-    
+    DefaultModalsProjects,
+   
   ],
   entryComponents: [
    DefaultModalsProjects

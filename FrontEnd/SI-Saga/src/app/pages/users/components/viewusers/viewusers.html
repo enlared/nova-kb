@@ -13,9 +13,9 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="exampleSelect2">
 									
-								  <option *ngFor = "let idvu of idUsersTableData" [value] = "idvu.name">{{idvu.name}}</option>	
+								  <option *ngFor = "let id of users" [value] = "id.idnuser">{{id.idnuser}}</option>	
 
 								 
 								</select>
@@ -28,9 +28,9 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="exampleSelect2">
 									
-								  <option *ngFor = "let uservu of viewUsersTableData" [value] = "uservu.name">{{uservu.name}}</option>	
+								  <option *ngFor = "let user of users" [value] = "user.nameuser">{{user.nameuser}}</option>	
 
 								 
 								</select>
@@ -44,9 +44,9 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="exampleSelect2">
 									
-								  <option *ngFor = "let rolvu of roleTableData" [value] = "rolvu.name">{{rolvu.name}}</option>	
+								  <option *ngFor = "let role of roles" [value] = "role.namerole" >{{role.namerole}}</option>	
 
 								 
 								</select>
@@ -72,13 +72,14 @@
 						</tr>
 						</thead>
 						<tbody>
-						<tr *ngFor = "let detail of viewUsersTableData">
-								<td>{{detail.id}}</td>
-								<td>{{detail.name}}</td>
-								<td>{{detail.lastname}}</td>
-								<td>{{detail.user}}</td>
-								<td>{{detail.email}}</td>
-								<td>{{detail.rol}}</td>
+						<tr *ngFor = "let user of users">
+								<td>{{user.idnuser}}</td>
+								<td>{{user.name}}</td>
+								<td>{{user.lastname}}</td>
+								<td>{{user.nameuser}}</td>
+								
+								<td>{{user.email}}</td>
+								<td>{{user.idnrole}}</td>
 								<td>
 										<button class = "btn btn-primary" ng-click = "editInfo(detail)" title = "Edit"><span class = "ion ion-edit"></span></button>
 								</td>

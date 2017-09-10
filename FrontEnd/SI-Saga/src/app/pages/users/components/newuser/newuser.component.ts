@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {RoleService} from '../../../../theme/services/roleService/role.service';
+import {Role} from '../../../../theme/services/roleService/role';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'newuser',
@@ -9,12 +11,17 @@ import {RoleService} from '../../../../theme/services/roleService/role.service';
 export class Newuser {
 
 
-  roleTableData:Array<any>;
-
+  roles: Role[];
+  msgError: string;
   constructor(private _roleService : RoleService ) {
 
-    this.roleTableData = _roleService.roleTableData;
+    this.loadRoles();
  
 }
+loadRoles(){
+  
+  
+  this._roleService.getRole().subscribe(roles =>this.roles = roles, error => this.msgError = <any>error);
+      }
 
 }

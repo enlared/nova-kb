@@ -44,9 +44,9 @@
 					<div class="col-md-12">
 							<div  class="form-group">
 								
-									<select  multiple class="form-control" id="exampleSelect2">
+									<select  multiple class="form-control text-center" id="exampleSelect2">
 										
-									  <option *ngFor = "let authorgp of viewAuthorsTableData" [value] = "authorgp.name">{{authorgp.name}}</option>	
+									  <option *ngFor = "let author of authors" [value] = "author.name">{{author.name}}</option>	
 
 									 
 									</select>
@@ -59,9 +59,9 @@
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="exampleSelect2">
 									
-								  <option *ngFor = "let typeprojectgp of typeProjectsTableData" [value] = "typeprojectgp.name">{{typeprojectgp.name}}</option>	
+								  <option *ngFor = "let typeProject of typeProjects" [value] = "typeProject.name">{{typeProject.name}}</option>	
 
 								 
 								</select>

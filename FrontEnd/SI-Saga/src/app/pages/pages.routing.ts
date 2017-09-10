@@ -26,7 +26,8 @@ export const routes: Routes = [
       { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule' },
       
       { path: 'documents', loadChildren: './documents/documents.module#DocumentsModule' },
-      { path: 'users', loadChildren: './users/users.module#UsersModule' }
+      { path: 'users', loadChildren: './users/users.module#UsersModule' },
+      { path: 'configurationsaga', loadChildren: './configuration/configuration.module#ConfigurationModule'},
     ]
   }
 ];

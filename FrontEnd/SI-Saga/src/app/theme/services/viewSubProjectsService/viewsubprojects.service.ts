@@ -1,219 +1,43 @@
 import {Injectable} from '@angular/core';
+import { SubProject } from './subproject';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 
 export class ViewSubProjectsService {
 
-viewSubProjectsTablePageSize = 10;
+  private url = 'http://localhost:8080/project/findall';
+  private headers = new Headers({ 'Content-Type': 'application/json' });
 
-viewSubProjectsTableData = [
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    {
-      idproject: 'Mark',
-      shortname: 'Otto',
-      name: 'jshd',
-      description: '@mdo',
-      creationdate: 'mdo@gmail.com',
-      label: '28',
-      author: 'werty',
-     
-    },
-    
-  ];
 
- 
-
-  constructor() {
+  constructor(private http: Http) {
     
   }
+
+  getSubProjects(): Observable<SubProject[]>{  
+    let url = `${this.url}`;
+     return this.http.get(url)
+     .map(r => r.json())
+     .catch(this.handleError);
+    }
+    
+    private handleError(error:Response | any){
+    
+    let errMsg: string;
+    if(error instanceof Response){
+    let body = error.json() || '';
+    let err =  body.error || JSON.stringify(body);
+    errMsg = `${error.status} - ${error.statusText || '' } ${err}`;
+    
+    }else{
+    
+      errMsg= error.message ? error.message : error.toString();
+    }
+    return Observable.throw(errMsg);
+    }
 
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {ViewDocumentsService} from '../../../../theme/services/viewDocumentsService/viewdocuments.service';
 import {IMyDpOptions} from 'mydatepicker';
-
+import {Documents} from '../../../../theme/services/viewDocumentsService/documents';
+import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'viewdocuments',
   templateUrl: './viewdocuments.html',
@@ -13,9 +14,20 @@ export class Viewdocuments {
     // other options...
     dateFormat: 'mm-dd-yyyy',
 };
-  viewDocumentsTableData:Array<any>;
+
+documents: Documents[];
+msgError: string;
+  
   constructor(private _viewDocumentsService : ViewDocumentsService) {
-  this.viewDocumentsTableData = _viewDocumentsService.viewDocumentsTableData;
+  
+this.loadDocuments();
+
   }
+
+  loadDocuments(){
+    
+    
+    this._viewDocumentsService.getDocuments().subscribe(documents =>this.documents = documents, error => this.msgError = <any>error);
+        }
   
 }

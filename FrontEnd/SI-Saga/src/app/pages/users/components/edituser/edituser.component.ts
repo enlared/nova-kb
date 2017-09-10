@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
-import { IdUsersService } from '../../../../theme/services/idUsersService/idusers.service';
 import {ViewUsersService} from '../../../../theme/services/viewUsersService/viewusers.service';
 import {RoleService} from '../../../../theme/services/roleService/role.service';
+import {Role} from '../../../../theme/services/roleService/role';
+import { Observable } from 'rxjs/Rx';
+import {Users} from '../../../../theme/services/viewUsersService/users';
 
 @Component({
   selector: 'edituser',
@@ -9,12 +11,28 @@ import {RoleService} from '../../../../theme/services/roleService/role.service';
   styleUrls: ['./edituser.scss']
 })
 export class Edituser {
-  viewUsersTableData:Array<any>;
-  idUsersTableData:Array<any>;
-  roleTableData:Array<any>;
-  constructor(private _viewUsersService : ViewUsersService, private _roleService : RoleService, private _idUsersService : IdUsersService ) {
-  this.viewUsersTableData = _viewUsersService.viewUsersTableData;
-  this.roleTableData = _roleService.roleTableData;
-  this.idUsersTableData = _idUsersService.idUsersTableData;
+  roles: Role[];
+  users: Users[];
+  msgError: string;
+  
+  
+  constructor(private _viewUsersService : ViewUsersService, private _roleService : RoleService ) {
+  
+    this.loadRoles();
+    this.loadUsers();
+  
+  
   }
+  loadRoles(){
+    
+    
+    this._roleService.getRole().subscribe(roles =>this.roles = roles, error => this.msgError = <any>error);
+        }
+        loadUsers(){
+          
+          
+          this._viewUsersService.getUsers().subscribe(users =>this.users = users, error => this.msgError = <any>error);
+              }
+
+
 }

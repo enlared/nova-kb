@@ -1,199 +1,45 @@
 import {Injectable} from '@angular/core';
+import { Users } from './users';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 
 export class ViewUsersService {
 
-viewUsersTablePageSize = 10;
-
-viewUsersTableData = [
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    {
-      id: 1,
-      name: 'Mark',
-      lastname: 'Otto',
-      user: '@mdo',
-      email: 'mdo@gmail.com',
-      rol: '28',
-     
-    },
-    
-  ];
+  private url = 'http://localhost:8080/user/findall';
+  private headers = new Headers({ 'Content-Type': 'application/json' });
 
  
 
-  constructor() {
+  constructor(private http: Http) {
     
   }
+
+  getUsers(): Observable<Users[]>{  
+    let url = `${this.url}`;
+     return this.http.get(url)
+     .map(r => r.json())
+     .catch(this.handleError);
+    }
+    
+    private handleError(error:Response | any){
+    
+    let errMsg: string;
+    if(error instanceof Response){
+    let body = error.json() || '';
+    let err =  body.error || JSON.stringify(body);
+    errMsg = `${error.status} - ${error.statusText || '' } ${err}`;
+    
+    }else{
+    
+      errMsg= error.message ? error.message : error.toString();
+    }
+    return Observable.throw(errMsg);
+    }
+
 
 }
