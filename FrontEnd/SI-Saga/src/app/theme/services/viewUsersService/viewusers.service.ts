@@ -26,7 +26,15 @@ export class ViewUsersService {
      .catch(this.handleError);
     }
 
+    addUser(user: Users){
+      let url  = `${this.url}/edit/save`;
+      let iJson = JSON.stringify(user);
+      return this.http.post(url, iJson, {headers: this.headers})
+      .map(r => r.json())
+      .catch(this.handleError);
+          }
 
+          
     private handleError(error:Response | any){
     
     let errMsg: string;
