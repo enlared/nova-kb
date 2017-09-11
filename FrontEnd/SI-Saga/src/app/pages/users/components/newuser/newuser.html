@@ -1,5 +1,5 @@
 <ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
-	<form [formGroup] no validate>
+	<form [formGroup]="form" no validate>
 		<div class="container-fluid">
 			<div class="form-group row">
 				<h4>Ingrese los datos para crear un usuario</h4>
@@ -10,6 +10,20 @@
 					<label for="name" class="control-label col-md-12">Nombre:</label>
 					<div class="col-md-12">
 						<input class="form-control" id="name" name="name" type="text" placeholder="Nombre" formControlName="name">
+						<div *ngIf="form.controls.name.errors && form.controls.name.dirty">
+							<div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	El  campo es requerido
+					</div>
+					<div *ngIf="form.controls.name.errors.minlength" class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							El  campo mínimo es de 3 caracteres
+											</div>	
+											<div *ngIf="form.controls.name.errors.maxlength" class="alert alert-danger">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													El  campo máximo es de 20 caracteres
+																	</div>
+				</div>
 					</div>
 				</div>
 				<!-- Form group lastname for new user -->
@@ -17,6 +31,20 @@
 					<label for="lastname" class="control-label col-md-12">Apellido:</label>
 					<div class="col-md-12">
 						<input type="text" class="form-control" id="lastname" placeholder="Apellido" formControlName="lastname">
+						<div *ngIf="form.controls.lastname.errors && form.controls.lastname.dirty">
+							<div *ngIf="form.controls.lastname.errors.required" class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	El  campo es requerido
+					</div>
+					<div *ngIf="form.controls.lastname.errors.minlength" class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							El  campo mínimo es de 3 caracteres
+											</div>	
+											<div *ngIf="form.controls.lastname.errors.maxlength" class="alert alert-danger">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													El  campo máximo es de 20 caracteres
+																	</div>
+				</div>
 					</div>
 				</div>
 			</div>
@@ -26,6 +54,20 @@
 					<label for="namuser" class="control-label col-md-12">Usuario:</label>
 					<div class="col-md-12">
 						<input type="text" class="form-control" id="nameuser" name="nameuser" placeholder="Usuario" formControlName="nameuser">
+						<div *ngIf="form.controls.nameuser.errors && form.controls.nameuser.dirty">
+							<div *ngIf="form.controls.nameuser.errors.required" class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	El  campo es requerido
+					</div>
+					<div *ngIf="form.controls.nameuer.errors.minlength" class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							El  campo mínimo es de 3 caracteres
+											</div>	
+											<div *ngIf="form.controls.nameuser.errors.maxlength" class="alert alert-danger">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													El  campo máximo es de 20 caracteres
+																	</div>
+				</div>
 					</div>
 				</div>
 				<!-- Form group e-mail for new user -->
@@ -33,6 +75,16 @@
 					<label for="email" class="control-label col-md-12">Email:</label>
 					<div class="col-md-12">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" formControlName="email">
+						<div *ngIf="form.controls.email.errors && form.controls.email.dirty">
+							<div *ngIf="form.controls.email.errors.required" class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	El  campo es requerido
+					</div>
+					<div *ngIf="form.controls.email.errors.email" class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							Validar Email
+											</div>
+				</div>
 					</div>
 				</div>
 			</div>
