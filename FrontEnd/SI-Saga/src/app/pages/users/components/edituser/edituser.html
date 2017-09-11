@@ -1,5 +1,5 @@
 <ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
-	<form class="form-horizontal">
+	<form [formGroup]="form" no validate>
 		<div class="container-fluid">
 			<div class="form-group row">
 				<h4>Buscar usuario para editar </h4>
@@ -8,11 +8,11 @@
 			<div class="form-group row">
 				<div class="form-group col-md-6">
 					<!-- Form group ID in edit user (find) -->
-					<label for="ideusrfind" class="control-label col-md-12">ID:</label>
+					<label for="idnuserFind" class="control-label col-md-12">ID:</label>
 					<div class="col-md-12">
 							<div class="form-group">
 									
-										<select  class="form-control" id="exampleSelect2">
+										<select  class="form-control" id="idnuserFind" name="idnuserFind" formControlGroup="idnuserFind">
 											<option *ngFor = "let id of users" [value] = "id.idnuser">{{id.idnuser}}</option>
 										 
 										</select>
@@ -21,11 +21,11 @@
 				</div>
 				<!-- Form group name in edit user (find) -->
 				<div class="form-group col-md-6">
-					<label for="nameeusrfind" class="control-label col-md-12">Usuario:</label>
+					<label for="nameuserFind" class="control-label col-md-12">Usuario:</label>
 					<div class="col-md-12">
 							<div class="form-group">
 									
-										<select class="form-control" id="exampleSelect2">
+										<select class="form-control" id="nameuserFind" name="nameuserFind" formControlGroup="nameuserFind">
 											<option *ngFor = "let user of users" [value] = "user.nameuser">{{user.nameuser}}</option>
 										 
 										</select>
@@ -41,50 +41,116 @@
 			<!-- Form group ID in edit user  -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="ideusr" class="control-label col-md-12">ID:</label>
+					<label for="idnuser" class="control-label col-md-12">ID:</label>
 					<div class="col-md-12">
-						<input class="form-control" id="ideusr" type="text" placeholder="01" readonly/>
+						<input class="form-control" id="idnuser" type="text" placeholder="ID" name="idnuser" formControlName="idnuser" readonly/>
 					</div>
+					<div *ngIf="form.controls.name.errors && form.controls.name.dirty">
+						<div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+El  campo es requerido
+				</div>
+				<div *ngIf="form.controls.name.errors.minlength" class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						El  campo mínimo es de 3 caracteres
+										</div>	
+										<div *ngIf="form.controls.name.errors.maxlength" class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												El  campo máximo es de 20 caracteres
+																</div>
+			</div>
 				</div>
 				<!-- Form group name in edit user  -->
 				<div class="form-group col-md-6">
-					<label for="nameeusr" class="control-label col-md-12">Nombre:</label>
+					<label for="nameuser" class="control-label col-md-12">Nombre:</label>
 					<div class="col-md-12">
-						<input class="form-control" id="nameeusr" type="text" placeholder="Juan">
+						<input class="form-control" id="nameuser" type="text" placeholder="nombre" name="nameuser" formControlGroup="nameuser">
 					</div>
+					<div *ngIf="form.controls.name.errors && form.controls.name.dirty">
+						<div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+El  campo es requerido
+				</div>
+				<div *ngIf="form.controls.name.errors.minlength" class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						El  campo mínimo es de 3 caracteres
+										</div>	
+										<div *ngIf="form.controls.name.errors.maxlength" class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												El  campo máximo es de 20 caracteres
+																</div>
+			</div>
 				</div>
 			</div>
 			<!-- Form group lastname in edit user  -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="lastnameeusr" class="control-label col-md-12">Apellido:</label>
+					<label for="lastname" class="control-label col-md-12">Apellido:</label>
 					<div class="col-md-12">
-						<input type="text" class="form-control" id="lastnameeusr" placeholder="Macias">
+						<input type="text" class="form-control" id="lastname" placeholder="apellido" name="lastname" formControlName="lastname">
 					</div>
+					<div *ngIf="form.controls.name.errors && form.controls.name.dirty">
+						<div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+El  campo es requerido
+				</div>
+				<div *ngIf="form.controls.name.errors.minlength" class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						El  campo mínimo es de 3 caracteres
+										</div>	
+										<div *ngIf="form.controls.name.errors.maxlength" class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												El  campo máximo es de 20 caracteres
+																</div>
+			</div>
 				</div>
 				<!-- Form group user in edit user  -->
 				<div class="form-group col-md-6">
-					<label for="usereusr" class="control-label col-md-12">Usuario:</label>
+					<label for="nameuser" class="control-label col-md-12">Usuario:</label>
 					<div class="col-md-12">
-						<input type="text" class="form-control" id="usereusr" placeholder="juanjo10">
+						<input type="text" class="form-control" id="nameuser" placeholder="usuario" name="nameuser" formControlName="nameuser">
 					</div>
+					<div *ngIf="form.controls.name.errors && form.controls.name.dirty">
+						<div *ngIf="form.controls.name.errors.required" class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+El  campo es requerido
+				</div>
+				<div *ngIf="form.controls.name.errors.minlength" class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						El  campo mínimo es de 3 caracteres
+										</div>	
+										<div *ngIf="form.controls.name.errors.maxlength" class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												El  campo máximo es de 20 caracteres
+																</div>
+			</div>
 				</div>
 			</div>
 			<!-- Form group email in edit user  -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="emaileusr" class="control-label col-md-12">Email:</label>
+					<label for="emai" class="control-label col-md-12">Email:</label>
 					<div class="col-md-12">
-						<input type="text" class="form-control" id="emaileusr" placeholder="juanjo10@gmail.com">
+						<input type="text" class="form-control" id="email" placeholder="e-mail" name="email" formControlName="email">
 					</div>
+					<div *ngIf="form.controls.email.errors && form.controls.email.dirty">
+						<div *ngIf="form.controls.email.errors.required" class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+El  campo es requerido
+				</div>
+				<div *ngIf="form.controls.email.errors.email" class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						Validar Email
+										</div>
+			</div>
 				</div>
 				<!-- Form group Rol in edit user -->
 				<div class="form-group  col-md-6">
-					<label for="roleusr" class="control-label col-md-12">Rol:</label>
+					<label for="role" class="control-label col-md-12">Rol:</label>
 					<div class="col-md-12">
 							<div class="form-group">
 									
-										<select  class="form-control" id="exampleSelect2">
+										<select  class="form-control" id="role" name="role" formControlName="role">
 											<option *ngFor = "let role of roles" [value] = "role.namerole">{{role.namerole}}</option>
 										</select>
 									  </div>
@@ -98,7 +164,11 @@
 				<div class="col-md-6">
 				</div>
 				<div class="col-md-3">
-					<modalsusers></modalsusers>
+					
+					<button class="btn btn-primary" (click)="editUser()" >Guardar</button>	
+					
+	
+					<button class="btn btn-success" (click)="cleanForm()">Cancelar</button>
 				</div>
 			</div>
 		</div>

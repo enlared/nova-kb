@@ -34,6 +34,14 @@ export class ViewUsersService {
       .catch(this.handleError);
           }
 
+          putUser(user: Users){
+            let url  = `${this.url}/edit/save`;
+let iJson = JSON.stringify(user);
+return this.http.put(url,iJson,{headers: this.headers})
+.map(r => r.json())
+.catch(this.handleError);
+
+}
 
     private handleError(error:Response | any){
     

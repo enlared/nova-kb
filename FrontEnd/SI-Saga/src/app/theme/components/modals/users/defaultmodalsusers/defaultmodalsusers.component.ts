@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Newuser } from '../../../../../pages/users/components/newuser/newuser.component'; 
 
 @Component({
   selector: 'add-service-modals-users',

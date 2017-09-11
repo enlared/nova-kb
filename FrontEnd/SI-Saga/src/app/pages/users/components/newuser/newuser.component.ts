@@ -6,14 +6,14 @@ import { FormArray, FormGroup, FormBuilder } from '@angular/forms';
 import {Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {ViewUsersService} from '../../../../theme/services/viewUsersService/viewusers.service';
-
+import {Users} from '../../../../theme/services/viewUsersService/users';
 @Component({
   selector: 'newuser',
   styleUrls: ['./newuser.scss'],
   templateUrl: './newuser.html',
 })
 export class Newuser {
-
+//isEdit = false;
   form: FormGroup;
 
   roles: Role[];
@@ -70,16 +70,32 @@ createForm(){
   }
 
 
+cleanForm(){
+this.form.reset();
+
+}
+
+goLista(){
+
+let link = [];
+this.router.navigate(link);
+
+}
   saveUser(){
     this._viewUsersService.addUser(this.form.value)
     .subscribe(
       rt => console.log(rt),
       er => console.log(er),
-      () => console.log('Terminado')
+      () => console.log('Terminado') 
+     
+
     );
     
     
     }
+
+
+
 
 loadRoles(){
   

@@ -1,5 +1,5 @@
 <ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
-	<form class="form-horizontal">
+	<form [formGroup]="form" no validate>
 		<div class="container-fluid">
 			<div class="form-group row">
 				<h4>Buscar usuarios para listar: </h4>
@@ -8,12 +8,12 @@
 			<div class="form-group row">
 				<div class="form-group col-md-4">
 					<!-- Form group ID in trash user (find) -->
-					<label for="idtusrfind" class="control-label col-md-12">ID:</label>
+					<label for="id" class="control-label col-md-12">ID:</label>
 
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control text-center" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="id" name="id" formControlName="id">
 									
 								  <option *ngFor = "let id of users" [value] = "id.idnuser">{{id.idnuser}}</option>	
 
@@ -24,11 +24,11 @@
 				</div>
 				<!-- Form group name in trash user (find) -->
 				<div class="form-group col-md-4">
-					<label for="nametusrfind" class="control-label col-md-12">Usuario:</label>
+					<label for="nameuser" class="control-label col-md-12">Usuario:</label>
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control text-center" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="nameuser" name="nameuser" formControlName="nameuser">
 									
 								  <option *ngFor = "let user of users" [value] = "user.nameuser">{{user.nameuser}}</option>	
 
@@ -39,12 +39,12 @@
 				</div>
 				<!-- Form group rol in trash user (find) -->
 				<div class="form-group col-md-4">
-					<label for="roltusr" class="control-label col-md-12">Rol:</label>
+					<label for="role" class="control-label col-md-12">Rol:</label>
 
 					<div class="col-md-12">
 							<div class="form-group">
 									
-								<select  multiple class="form-control text-center" id="exampleSelect2">
+								<select  multiple class="form-control text-center" id="role" name="role" formControlName="role">
 									
 								  <option *ngFor = "let role of roles" [value] = "role.namerole" >{{role.namerole}}</option>	
 

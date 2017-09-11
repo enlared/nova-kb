@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DefaultModalsUsers } from './defaultmodalsusers/defaultmodalsusers.component';
+import { Newuser } from '../../../../pages/users/components/newuser/newuser.component'; 
 
 @Component({
   selector: 'modalsusers',
