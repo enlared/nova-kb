@@ -3,7 +3,7 @@ import {RoleService} from '../../../../theme/services/roleService/role.service';
 import {Role} from '../../../../theme/services/roleService/role';
 import { Observable } from 'rxjs/Rx';
 import { FormArray, FormGroup, FormBuilder } from '@angular/forms'; 
-
+import {Validators } from '@angular/forms';
 @Component({
   selector: 'newuser',
   styleUrls: ['./newuser.scss'],
@@ -24,12 +24,30 @@ export class Newuser {
 createForm(){
   this.form = this.fb.group({
   
-    name : '',
-    lastname: '',
+    name : ['', Validators.compose([
+  Validators.required,
+  Validators.maxLength(20),
+  Validators.minLength(3),
   
-    nameuser: '',
+    ])],
+    lastname: ['', Validators.compose([
+      Validators.required,
+      Validators.maxLength(20),
+      Validators.minLength(3),
+      
+        ])],
+  
+    nameuser: ['', Validators.compose([
+      Validators.required,
+      Validators.maxLength(20),
+      Validators.minLength(3),
+      
+        ])],
         idnrole: '',
-        email: '',
+        email: ['', Validators.compose([
+          Validators.required,
+          Validators.email,
+            ])],
   
   });
   
