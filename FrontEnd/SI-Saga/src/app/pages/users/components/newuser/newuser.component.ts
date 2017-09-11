@@ -69,6 +69,18 @@ createForm(){
   
   }
 
+
+  saveUser(){
+    this._viewUsersService.addUser(this.form.value)
+    .subscribe(
+      rt => console.log(rt),
+      er => console.log(er),
+      () => console.log('Terminado')
+    );
+    
+    
+    }
+
 loadRoles(){
   
   

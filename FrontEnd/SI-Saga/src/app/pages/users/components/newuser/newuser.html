@@ -96,7 +96,7 @@
 						
 								<div class="form-group">
 										
-									<select  multiple class="form-control text-center" id="idnrole" name="idnrole" formControlName="idnrole">
+									<select class="form-control text-center" id="idnrole" name="idnrole" formControlName="idnrole">
 										
 									  <option *ngFor = "let rol of roles" [value] = "rol.namerole" >{{rol.namerole}}</option>	
 	
@@ -114,9 +114,13 @@
 				<div class="col-md-6">
 				</div>
 				<div class="col-md-3">
+					<button class="btn btn-primary" (click)="saveUser()">
+Submit</button>						<!--
 				<modalsusers></modalsusers>
+					-->
 				</div>
 			</div>
 		</div>
+		{{form.value | json}}
 	</form>
 </ba-card>
