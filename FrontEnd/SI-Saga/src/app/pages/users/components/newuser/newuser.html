@@ -1,5 +1,5 @@
 <ba-card cardTitle="Bienvenido al sistema SI-SAGA" baCardClass="with-scroll">
-	<form class="form-horizontal">
+	<form [formGroup] no validate>
 		<div class="container-fluid">
 			<div class="form-group row">
 				<h4>Ingrese los datos para crear un usuario</h4>
@@ -7,44 +7,44 @@
 			<!-- Form group name for new user -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="shortnamenusr" class="control-label col-md-12">Nombre:</label>
+					<label for="name" class="control-label col-md-12">Nombre:</label>
 					<div class="col-md-12">
-						<input class="form-control" id="shortnamenusr" type="text" placeholder="Nombre">
+						<input class="form-control" id="name" name="name" type="text" placeholder="Nombre" formControlName="name">
 					</div>
 				</div>
 				<!-- Form group lastname for new user -->
 				<div class="form-group col-md-6">
-					<label for="namenusr" class="control-label col-md-12">Apellido:</label>
+					<label for="lastname" class="control-label col-md-12">Apellido:</label>
 					<div class="col-md-12">
-						<input type="text" class="form-control" id="namenusr" placeholder="Apellido">
+						<input type="text" class="form-control" id="lastname" placeholder="Apellido" formControlName="lastname">
 					</div>
 				</div>
 			</div>
 			<!-- Form group user for new user -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="usernusr" class="control-label col-md-12">Usuario:</label>
+					<label for="namuser" class="control-label col-md-12">Usuario:</label>
 					<div class="col-md-12">
-						<input type="text" class="form-control" id="usernusr" placeholder="Usuario">
+						<input type="text" class="form-control" id="nameuser" name="nameuser" placeholder="Usuario" formControlName="nameuser">
 					</div>
 				</div>
 				<!-- Form group e-mail for new user -->
 				<div class="form-group col-md-6">
-					<label for="emailnusr" class="control-label col-md-12">Email:</label>
+					<label for="email" class="control-label col-md-12">Email:</label>
 					<div class="col-md-12">
-						<input type="email" class="form-control" id="emailnusr" placeholder="Email">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Email" formControlName="email">
 					</div>
 				</div>
 			</div>
 			<!-- Form group rol for new user -->
 			<div class="form-group row">
 				<div class="form-group col-md-6">
-					<label for="rolnusr" class="control-label col-md-12">Rol:</label>
+					<label for="idnrole" class="control-label col-md-12">Rol:</label>
 					<div class="col-md-12">
 						
 								<div class="form-group">
 										
-									<select  multiple class="form-control text-center" id="exampleSelect2">
+									<select  multiple class="form-control text-center" id="idnrole" name="idnrole" formControlName="idnrole">
 										
 									  <option *ngFor = "let rol of roles" [value] = "rol.namerole" >{{rol.namerole}}</option>	
 	

@@ -124,7 +124,7 @@ export const PAGES_MENU = [
             }
           },
           {
-            path: 'viewusers',
+            path: '',
             data: {
               menu: {
                 title: 'Listar Usuarios',
@@ -132,7 +132,7 @@ export const PAGES_MENU = [
             }
           },
           {
-            path: 'edituser',
+            path: '',
             data: {
               menu: {
                 title: 'Editar usuario',

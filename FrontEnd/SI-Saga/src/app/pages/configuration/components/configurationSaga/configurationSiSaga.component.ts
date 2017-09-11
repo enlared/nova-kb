@@ -9,6 +9,9 @@ import { Observable } from 'rxjs/Rx';
 import { Authors } from '../../../../theme/services/authorsService/authors';
 import { TypeProjects } from '../../../../theme/services/typeProjectsService/typeprojects';
 import { Labels } from '../../../../theme/services/labelsService/labels';
+
+
+
 @Component({
   selector: 'configurationsisaga',
   templateUrl: './configurationSiSaga.html',

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 
 export class ViewUsersService {
 
-  private url = 'http://localhost:8080/user/findall';
+  private url = 'http://localhost:8080/user';
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
  
@@ -20,12 +20,13 @@ export class ViewUsersService {
   }
 
   getUsers(): Observable<Users[]>{  
-    let url = `${this.url}`;
+    let url = `${this.url}/findall`;
      return this.http.get(url)
      .map(r => r.json())
      .catch(this.handleError);
     }
-    
+
+
     private handleError(error:Response | any){
     
     let errMsg: string;

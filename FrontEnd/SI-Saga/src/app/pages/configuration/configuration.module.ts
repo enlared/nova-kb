@@ -25,6 +25,7 @@ import { DefaultModalsConfig} from '../../theme/components/modals/config/default
     routing,
     HttpModule,
    
+   
   ],
   declarations: [
     Configuration,
