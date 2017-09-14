@@ -12,7 +12,7 @@ import {Users} from '../../../../theme/services/viewUsersService/users';
 })
 export class ViewUsers {
 
- 
+ user: Users = new Users();
   roles: Role[];
   users: Users[];
   msgError: string;

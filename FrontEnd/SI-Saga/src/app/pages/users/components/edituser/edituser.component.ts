@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {RoleService} from '../../../../theme/services/roleService/role.service';
 import {Role} from '../../../../theme/services/roleService/role';
 import { Observable } from 'rxjs/Rx';
-import { FormArray, FormGroup, FormBuilder } from '@angular/forms'; 
+
 import {Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {ViewUsersService} from '../../../../theme/services/viewUsersService/viewusers.service';
@@ -15,20 +15,21 @@ import {Users} from '../../../../theme/services/viewUsersService/users';
 })
 export class Edituser {
   roles: Role[];
-  users: Users[];
+  user: Users = new Users();
   msgError: string;
-  form: FormGroup;
+  users = [
+  ];
   
-  constructor(private fb: FormBuilder, 
+  constructor( 
     private _roleService: RoleService, 
     private _viewUsersService: ViewUsersService,
     private route: ActivatedRoute, 
     private router: Router ) {
   
     this.loadRoles();
-    this.loadUsers();
-    this.createForm();
+   // this.loadUsers();
   
+   
   }
 
   ngOnitInit(){
@@ -39,42 +40,11 @@ export class Edituser {
     
     }
 
-    createForm(){
-      this.form = this.fb.group({
-      
-        name : ['', Validators.compose([
-      Validators.required,
-      Validators.maxLength(20),
-      Validators.minLength(3),
-      
-        ])],
-        lastname: ['', Validators.compose([
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.minLength(3),
-          
-            ])],
-      
-        nameuser: ['', Validators.compose([
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.minLength(3),
-          
-            ])],
-            idnrole: '',
-            email: ['', Validators.compose([
-              Validators.required,
-              Validators.email,
-                ])],
-      
-      });
-      
-      
-      }
+ 
 
-      updateUser(user: Users){
-        if(!user) return;
-        this._viewUsersService.putUser(user)
+      updateUser(){
+      //  if (!this.user) return;
+        this._viewUsersService.putUser(this.user)
         .subscribe(
           rt => console.log(rt),
           er => console.log(er),
@@ -82,10 +52,7 @@ export class Edituser {
         );
           }
         
-        cleanForm(){
-        this.form.reset();
-        
-        }
+     
         
         goLista(){
         
@@ -94,16 +61,17 @@ export class Edituser {
         
         }
         
-  loadRoles(){
+  loadRoles(){  
     
     
     this._roleService.getRole().subscribe(roles =>this.roles = roles, error => this.msgError = <any>error);
         }
-        loadUsers(){
+     
+     //   loadUsers(){
           
           
-          this._viewUsersService.getUsers().subscribe(users =>this.users = users, error => this.msgError = <any>error);
-              }
+       //   this._viewUsersService.getUsers().subscribe(users => this.users = users, error => this.msgError = <any>error);
+         //     }
 
 
 }

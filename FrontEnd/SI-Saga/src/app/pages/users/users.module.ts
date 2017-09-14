@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -18,7 +18,7 @@ import { RoleService} from '../../theme/services/roleService/role.service';
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    FormsModule,
     NgaModule,
     NgbModalModule,
     NgbDropdownModule,
